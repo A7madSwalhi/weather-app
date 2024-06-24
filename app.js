@@ -23,7 +23,7 @@ const changeWhe = function (lat, long) {
         console.log(data.wind.speed);
         console.log(data);
         humidity.textContent = `${data.main.humidity} %`;
-        pressure.textContent = `${data.main.pressure} %`;
+        pressure.textContent = `${data.main.pressure} Pa`;
         wind.textContent = `${data.wind.speed} km/h`;
         temp.textContent = `${Math.round(data.main.temp)}°C`;
         weades.textContent = data.weather[0].description;
@@ -47,3 +47,7 @@ select.addEventListener("change", () => {
 
     changeWhe(lat1, long1);
 });
+
+document.body.onload = () => {
+    changeWhe(48.828057, 2.34519);
+};
